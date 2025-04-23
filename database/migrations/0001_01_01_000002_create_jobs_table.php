@@ -19,6 +19,8 @@ return new class extends Migration
             $table->unsignedInteger('reserved_at')->nullable();
             $table->unsignedInteger('available_at');
             $table->unsignedInteger('created_at');
+            $table->charset = 'utf8'; // تغيير الترميز إلى utf8
+            $table->collation = 'utf8_unicode_ci';
         });
 
         Schema::create('job_batches', function (Blueprint $table) {

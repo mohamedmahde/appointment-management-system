@@ -18,6 +18,8 @@ return new class extends Migration
             $table->timestamps();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->foreign('role_id')->references('id')->on('roles')->onDelete('cascade');
+            $table->charset = 'utf8'; // تغيير الترميز إلى utf8
+            $table->collation = 'utf8_unicode_ci';
         });
     }
 

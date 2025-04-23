@@ -15,6 +15,8 @@ return new class extends Migration
             $table->string('key')->primary();
             $table->mediumText('value');
             $table->integer('expiration');
+            $table->charset = 'utf8'; // تغيير الترميز إلى utf8
+            $table->collation = 'utf8_unicode_ci';
         });
 
         Schema::create('cache_locks', function (Blueprint $table) {

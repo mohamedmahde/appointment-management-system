@@ -16,6 +16,8 @@ return new class extends Migration
             $table->string('name');
             $table->string('description')->nullable();
             $table->timestamps();
+            $table->charset = 'utf8'; // تغيير الترميز إلى utf8
+            $table->collation = 'utf8_unicode_ci';
         });
     }
 

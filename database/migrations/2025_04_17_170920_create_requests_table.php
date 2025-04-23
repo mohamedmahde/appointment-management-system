@@ -21,6 +21,8 @@ return new class extends Migration
             $table->timestamps();
             $table->foreign('sender_id')->references('id')->on('users')->onDelete('cascade');
             $table->foreign('receiver_id')->references('id')->on('users')->onDelete('set null');
+            $table->charset = 'utf8'; // تغيير الترميز إلى utf8
+            $table->collation = 'utf8_unicode_ci';
         });
     }
 

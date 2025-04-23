@@ -14,6 +14,8 @@ return new class extends Migration
         Schema::table('requests', function (Blueprint $table) {
             $table->string('file_path')->nullable()->after('rejection_reason');
             $table->string('file_name')->nullable()->after('file_path');
+            $table->charset = 'utf8'; // تغيير الترميز إلى utf8
+            $table->collation = 'utf8_unicode_ci';
         });
     }
 

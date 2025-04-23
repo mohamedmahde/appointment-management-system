@@ -15,7 +15,10 @@ return new class extends Migration
             $table->string('type')->nullable()->after('description'); // نوع الطلب (مقابلة، إلخ)
             $table->timestamp('scheduled_time')->nullable()->after('status'); // وقت المقابلة
             $table->text('rejection_reason')->nullable()->after('scheduled_time'); // سبب الرفض
+            $table->charset = 'utf8'; // تغيير الترميز إلى utf8
+            $table->collation = 'utf8_unicode_ci';
         });
+
     }
 
     /**

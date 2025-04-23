@@ -13,6 +13,8 @@ return new class extends Migration
     {
         Schema::table('requests', function (Blueprint $table) {
             $table->string('interviewee_name')->nullable()->after('description');
+            $table->charset = 'utf8'; // تغيير الترميز إلى utf8
+            $table->collation = 'utf8_unicode_ci';
         });
     }
 
