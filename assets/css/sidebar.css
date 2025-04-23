@@ -1,0 +1,72 @@
+/**
+ * أنماط CSS مخصصة للشريط الجانبي
+ */
+
+/* أنماط أساسية للشريط الجانبي */
+.sidebar-wrapper {
+    transition: all 0.3s ease;
+}
+
+.page-wrapper.toggled .sidebar-wrapper {
+    right: 0;
+}
+
+/* أنماط القوائم الفرعية */
+.sidebar-dropdown > a:after {
+    content: "\f105";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    font-style: normal;
+    margin-right: 10px;
+    float: left;
+    transition: transform 0.3s ease;
+}
+
+.sidebar-dropdown.active > a:after {
+    transform: rotate(-90deg);
+}
+
+.sidebar-submenu {
+    display: none;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+}
+
+.sidebar-dropdown.active .sidebar-submenu {
+    display: block;
+}
+
+/* تحسين مظهر الروابط */
+.sidebar-menu a {
+    text-decoration: none;
+    position: relative;
+    padding: 8px 15px;
+    display: block;
+    transition: all 0.3s ease;
+}
+
+.sidebar-menu a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.sidebar-menu .active > a {
+    background-color: rgba(255, 255, 255, 0.1);
+    font-weight: bold;
+}
+
+/* تحسين مظهر الأيقونات */
+.sidebar-menu i {
+    margin-left: 10px;
+}
+
+/* تعديلات للاتجاه من اليمين إلى اليسار */
+.sidebar-wrapper {
+    right: 0;
+    direction: rtl;
+}
+
+@media screen and (max-width: 768px) {
+    .page-wrapper:not(.toggled) .sidebar-wrapper {
+        right: -280px;
+    }
+}
