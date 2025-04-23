@@ -1,7 +1,8 @@
 <?php
 
 namespace App\Providers;
-
+use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -21,6 +22,8 @@ class AppServiceProvider extends ServiceProvider
     {
         if (auth()->check()) {
             auth()->user()->update(['last_seen' => now()]);
+            Schema::defaultStringLength(191);
+
         }
         //
     }
