@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('permissions', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('description')->nullable();
+            $table->string('name', 191);
+            $table->string('description', 191)->nullable();
             $table->timestamps();
             $table->charset = 'utf8'; // تغيير الترميز إلى utf8
             $table->collation = 'utf8_unicode_ci';

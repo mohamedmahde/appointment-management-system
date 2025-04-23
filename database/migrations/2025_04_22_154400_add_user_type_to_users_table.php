@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->string('user_type')->nullable()->after('email');
+            $table->string('user_type', 191)->nullable()->after('email');
             $table->charset = 'utf8'; // تغيير الترميز إلى utf8
             $table->collation = 'utf8_unicode_ci';
         });

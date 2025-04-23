@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('requests', function (Blueprint $table) {
-            $table->string('type')->nullable()->after('description'); // نوع الطلب (مقابلة، إلخ)
+            $table->string('type', 191)->nullable()->after('description'); // نوع الطلب (مقابلة، إلخ)
             $table->timestamp('scheduled_time')->nullable()->after('status'); // وقت المقابلة
             $table->text('rejection_reason')->nullable()->after('scheduled_time'); // سبب الرفض
             $table->charset = 'utf8'; // تغيير الترميز إلى utf8

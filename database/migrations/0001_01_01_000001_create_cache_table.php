@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('cache', function (Blueprint $table) {
-            $table->string('key')->primary();
+            $table->string('key', 191)->primary();
             $table->mediumText('value');
             $table->integer('expiration');
             $table->charset = 'utf8'; // تغيير الترميز إلى utf8
@@ -20,8 +20,8 @@ return new class extends Migration
         });
 
         Schema::create('cache_locks', function (Blueprint $table) {
-            $table->string('key')->primary();
-            $table->string('owner');
+            $table->string('key', 191)->primary();
+            $table->string('owner', 191);
             $table->integer('expiration');
         });
     }

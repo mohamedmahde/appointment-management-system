@@ -11,7 +11,7 @@ return new class extends Migration {
     public function up(): void
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->string('photo')->nullable()->after('last_seen');
+            $table->string('photo', 191)->nullable()->after('last_seen');
             $table->charset = 'utf8'; // تغيير الترميز إلى utf8
             $table->collation = 'utf8_unicode_ci';
         });

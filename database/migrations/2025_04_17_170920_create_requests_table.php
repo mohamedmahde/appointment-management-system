@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('requests', function (Blueprint $table) {
             $table->id();
-            $table->string('title');
+            $table->string('title', 191);
             $table->text('description')->nullable();
             $table->enum('status', ['قيد المراجعة', 'مقبول', 'مرفوض', 'مؤجل'])->default('قيد المراجعة');
             $table->unsignedBigInteger('sender_id');

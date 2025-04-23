@@ -13,9 +13,9 @@ return new class extends Migration
     {
         Schema::create('documents', function (Blueprint $table) {
             $table->id();
-            $table->string('title');
+            $table->string('title', 191);
             $table->text('description')->nullable();
-            $table->string('file_path');
+            $table->string('file_path', 191);
             $table->unsignedBigInteger('user_id');
             $table->timestamps();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
